@@ -15,8 +15,9 @@ public class Tracker {
     }
     public boolean replace(String id, Item item) {
         boolean result = false;
-        for (int index = 0; index != this.position; index++) {
-            if (this.items[index].getId().equals(id)) {
+        for (int index = 0; index < position; index++) {
+            if (this.items[index] != null && this.items[index].getId().equals(id)) {
+                item.setId(id);
                 this.items[index] = item;
                 result = true;
                 break;

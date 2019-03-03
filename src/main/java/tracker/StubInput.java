@@ -1,14 +1,14 @@
 package tracker;
 
 public class StubInput implements Input {
-    private String[] answers;
-    private int position = 0;
+    private final String[] value;
+    private int position;
 
-    public StubInput(String[] answers) {
-        this.answers = answers;
+    public StubInput(String[] value) {
+        this.value = value;
     }
-
+    @Override
     public String ask(String question) {
-        return answers[position++];
+        return this.value[position++];
     }
 }
