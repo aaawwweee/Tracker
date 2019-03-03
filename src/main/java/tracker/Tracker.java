@@ -10,12 +10,12 @@ public class Tracker {
 
     public Item add(Item item) {
         item.setId(this.generateId());
-        this.items[position++] = item;
+        this.items[this.position++] = item;
         return item;
     }
     public boolean replace(String id, Item item) {
         boolean result = false;
-        for (int index = 0; index < position; index++) {
+        for (int index = 0; index < this.position; index++) {
             if (this.items[index] != null && this.items[index].getId().equals(id)) {
                 item.setId(id);
                 this.items[index] = item;
